@@ -39,7 +39,7 @@ export class TransferFundsPage {
         await this.transferButton.click();
     }
 
-    // ✅ FIX QUAN TRỌNG
+    
     async getFromAccountId(): Promise<string> {
         await this.fromAccountId.waitFor({ state: 'visible' });
 
@@ -48,7 +48,7 @@ export class TransferFundsPage {
             .textContent();
 
         if (!id) {
-            throw new Error('❌ Failed to get from account ID');
+            throw new Error( 'Failed to get from account ID');
         }
 
         return id.trim();

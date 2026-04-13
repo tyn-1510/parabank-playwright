@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import path from 'path';
-import fs from 'fs';
 import { RegisterPage } from '../pages/RegisterPage';
 
 const authFile = path.join(__dirname, '../playwright/.auth/user.json');

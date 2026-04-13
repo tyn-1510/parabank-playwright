@@ -33,14 +33,14 @@ export class OpenNewAccountPage {
         await this.openAccountButton.click();
     }
 
-    // ✅ FIX QUAN TRỌNG NHẤT
+   
     async getNewAccountId(): Promise<string> {
         await this.newAccountId.waitFor({ state: 'visible' });
 
         const id = await this.newAccountId.textContent();
 
         if (!id) {
-            throw new Error('❌ Failed to get new account ID');
+            throw new Error('Failed to get new account ID');
         }
 
         return id.trim();
@@ -53,7 +53,7 @@ export class OpenNewAccountPage {
         const newAccountMessageText = await this.newAccountMessage.textContent();
 
         if (!newAccountMessageText) {
-            throw new Error('❌ Account creation message is empty');
+            throw new Error(' Account creation message is empty');
         }
 
         await expect(newAccountMessageText).toContain(newAccountId);
